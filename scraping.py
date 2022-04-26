@@ -14,7 +14,7 @@ def scrape_all():
 
     #Set news title and paragraph variables (will return 2 values)
     news_title, news_paragraph = mars_news(browser)
-
+    
     # Run all scraping functions and store results in a dictionary
     data = {
         "news_title": news_title,
@@ -23,6 +23,7 @@ def scrape_all():
         "facts": mars_facts(),
         "last_modified": dt.datetime.now()
     }
+    return data
 
 # add 'browser' to function, telling Python that we'll be using the browser variable we defined outside the function
 def mars_news(browser):
@@ -62,8 +63,9 @@ def mars_news(browser):
 def featured_image(browser):   
     # Visit URL
     url = 'https://spaceimages-mars.com'
+    print(url)
     browser.visit(url)
-
+    
     # Find and click the full image button
     full_image_elem = browser.find_by_tag('button')[1]
     full_image_elem.click()
