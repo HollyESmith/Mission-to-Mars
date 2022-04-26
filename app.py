@@ -30,6 +30,8 @@ def index():
 def scrape():
    mars = mongo.db.mars # assign a new variable that points to our Mongo database
    mars_data = scraping.scrape_all() # create a new variable to hold the newly scraped data
+   
+   print(mars_data)
    mars.update_one({}, {"$set":mars_data}, upsert=True)
    return redirect('/', code=302)
 
