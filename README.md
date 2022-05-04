@@ -24,13 +24,13 @@ The final webpage looked like this:
 
 ![webpage](https://user-images.githubusercontent.com/97558998/166746985-b10981aa-7e5d-40df-b455-82df14b14831.png)
 
-The webpage is mobile-responsive, as seen here in the iPhone SE view and iPad Air view, respectively:
+The webpage is mobile-responsive, as seen here in the iPhone SE and iPad Air views, respectively:
 
 ![website iPhone SE view](https://user-images.githubusercontent.com/97558998/166747032-753bf26c-1fd0-4ff9-92d3-60a2ee5d03c2.png)
 
 ![website iPad Air view](https://user-images.githubusercontent.com/97558998/166747155-57687d02-f27d-4095-a75d-02c7ce7e7295.png)
 
-Finally, I used Bootstrap to change the color of the "Scrape the Data" button:
+For Deliverable 3, I used Bootstrap to change the color of the "Scrape the Data" button:
 
 ![Del 3 button color change](https://user-images.githubusercontent.com/97558998/166747361-b398b768-6ed5-4f44-a7c0-e96da8046ba3.png)
 
