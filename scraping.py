@@ -1,5 +1,6 @@
 # Import Splinter and BeautifulSoup
 from dataclasses import dataclass
+from http.server import executable
 from splinter import Browser
 from bs4 import BeautifulSoup as soup
 import pandas as pd
@@ -14,6 +15,7 @@ def scrape_all():
 
     #Set news title and paragraph variables (will return 2 values)
     news_title, news_paragraph = mars_news(browser)
+    hemisphere_image_urls=hemisphere(browser)
     
     # Run all scraping functions and store results in a dictionary
     data = {
@@ -21,6 +23,7 @@ def scrape_all():
         "news_paragraph": news_paragraph,
         "featured_image": featured_image(browser),
         "facts": mars_facts(),
+        "hemispheres": hemisphere_image_urls(),
         "last_modified": dt.datetime.now()
     }
     return data
@@ -110,7 +113,38 @@ def mars_facts():
     browser.quit()
     return data
 
+# ## Scrape Hemisphere Data
+def hemisphere(browser):
+    url='https://marshemispheres.com/'
+    browser.visit(url)
+
+    hemisphere_image_urls = []
+
+    img_links=browser.find_by_css("a.product-item h3")
+
+    for x in range(len(img_links)):
+        hemisphere={}
+
+        # find elements
+        browser.find_by_css("a.product-item h3")[x].click()
+
+        # find sample image link
+        sample_img= browser.find_link_by_text("Sample").first
+        hemisphere['img_url']=sample_img['href']
+
+        # get hemisphere title
+        hemisphere['title']=browser.find_by_css("h2.title").text
+
+        # add objects to hemisphere_image_urls list
+        hemisphere_image_urls.append(hemisphere)
+
+        browser.back()
+    return hemisphere_image_urls    
+
 # Tell Flask that script is complete and ready for action
 if __name__ == "__main__":
     # If running as script, print scraped data
     print(scrape_all()) 
+
+
+

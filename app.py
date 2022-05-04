@@ -1,4 +1,5 @@
 # This is where we'll use Flask and Mongo to begin creating Robin's web app.
+import Mission_to_Mars_Challenge as scraping
 
 # use Flask to render a template, redirecting to another url, and creating a URL
 from flask import Flask, render_template, redirect, url_for
@@ -7,7 +8,7 @@ from flask import Flask, render_template, redirect, url_for
 from flask_pymongo import PyMongo
 
 # to use the scraping code, we will convert from Jupyter notebook to Python
-import scraping
+#import scraping
 
 #set up Flask
 app = Flask(__name__)
