@@ -30,7 +30,7 @@ The webpage is mobile-responsive, as seen here in the iPhone SE and iPad Air vie
 
 ![website iPad Air view](https://user-images.githubusercontent.com/97558998/166747155-57687d02-f27d-4095-a75d-02c7ce7e7295.png)
 
-For Deliverable 3, I used Bootstrap to change the color of the "Scrape the Data" button:
+For Deliverable 3, I used Bootstrap to change the color of the "Scrape New Data" button:
 
 ![Del 3 button color change](https://user-images.githubusercontent.com/97558998/166747361-b398b768-6ed5-4f44-a7c0-e96da8046ba3.png)
 
